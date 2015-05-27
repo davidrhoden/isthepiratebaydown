@@ -10,23 +10,30 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400italic,400,700' rel='stylesheet' type='text/css'>
     </head>
     <body>
+        <div class="container">
+        <h1>Is The Pirate Bay Down?</h1>
         <?php
 $url = 'http://www.thepiratebay.se';
-//$url = 'http://www.davidrhoden.com';
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_NOBODY, true);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_exec($ch);
-    $retcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
-    if (200==$retcode) {
-        // All's well
-       echo '<div class="no"><i class="fa fa-thumbs-o-up"></i>No. It\'s working for me.</div>';
-    } else {
-        // not so much
-       echo '<div class="yes"><i class="fa fa-thumbs-o-down"></i> Yes. It is not just you. The server is not responding.</div>';
+
+$urls = ['http://www.thepiratebay.se', 'http://thepiratebay.am', 'http://thepiratebay.gd', 'http://thepiratebay.gs', 'htt://thepiratebay.la', 'http://thepiratebay.mn','http://thepiratebay.vg'];
+    foreach($urls as $val) {
+        $ch = curl_init($val);
+        curl_setopt($ch, CURLOPT_NOBODY, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_exec($ch);
+        $retcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        if (200==$retcode) {
+            // All's well
+           echo '<div class="no"><i class="fa fa-thumbs-o-up"></i> No. <a href="' . $val .'">' . $val . '</a> is working.</div>';
+        } else {
+            // not so much
+           echo '<div class="yes"><i class="fa fa-thumbs-o-down"></i> Yes. It is not just you.<br><a href="' . $val .'">' . $val . '</a> is not responding.</div>';
+        }
     }
 ?>
+</div>
+<div class="adcontainer">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- responsive ad 150527 -->
 <ins class="adsbygoogle"
@@ -37,5 +44,6 @@ $url = 'http://www.thepiratebay.se';
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+</div>
     </body>
 </html>
