@@ -1,0 +1,19 @@
+html, body {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 36px;
+	text-align: center;
+}
+
+.yes, .no {
+	
+	height:72px; /* you need to specify a height*/
+    margin: -36px auto 0; /*negative half the height*/
+    position: absolute; /*change to absolute*/
+    top: 50%;
+    width: 90%;
+}
+
+
+
+.fa-thumbs-o-down { color: red; }
+.fa-thumbs-o-up { color: green; }
