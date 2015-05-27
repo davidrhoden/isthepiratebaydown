@@ -13,9 +13,10 @@
         <div class="container">
         <h1>Is The Pirate Bay Down?</h1>
         <?php
-$url = 'http://www.thepiratebay.se';
+        error_reporting(0);
+// $urls = ['http://www.thepiratebay.se', 'http://thepiratebay.am', 'http://thepiratebay.gd', 'http://thepiratebay.gs', 'http://thepiratebay.la', 'http://thepiratebay.mn','http://thepiratebay.vg'];
 
-$urls = ['http://www.thepiratebay.se', 'http://thepiratebay.am', 'http://thepiratebay.gd', 'http://thepiratebay.gs', 'htt://thepiratebay.la', 'http://thepiratebay.mn','http://thepiratebay.vg'];
+$urls = array('http://thepiratebay.se', 'http://thepiratebay.am', 'http://thepiratebay.gd', 'http://thepiratebay.gs', 'http://thepiratebay.la', 'http://thepiratebay.mn','http://thepiratebay.vg');
     foreach($urls as $val) {
         $ch = curl_init($val);
         curl_setopt($ch, CURLOPT_NOBODY, true);
@@ -45,5 +46,15 @@ $urls = ['http://www.thepiratebay.se', 'http://thepiratebay.am', 'http://thepira
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-63471412-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
     </body>
 </html>
